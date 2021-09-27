@@ -27,7 +27,17 @@ public class Player extends Actor
     
     public Player(int speed, float jumpForce, float gravity, int maxHealth, 
                   int maxPowerUp, Class nextLevel, GreenfootSound music)
-    {}
+    {
+        WALK_ANIMATION = new GreenfootImage[]
+                        {
+                            new GreenfootImage("walk0.png"),
+                            new GreenfootImage("walk1.png"),
+                            new GreenfootImage("walk2.png"),
+                            new GreenfootImage("walk3.png"),
+                            new GreenfootImage("walk4.png"),
+                            new GreenfootImage("walk5.png"),
+                        };
+    }
     
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -36,5 +46,19 @@ public class Player extends Actor
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public void addedToWorld(World world) {}
+    
+    private void walk() {}
+    private void jump() {}
+    private void fall() {}
+    private void animator() {}
+    private void onCollision() {}
+    private void mirrorImages() {}
+    private void gameOver() {}
+    private boolean isOnGround() 
+    {
+        return false;
     }
 }
