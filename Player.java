@@ -99,6 +99,15 @@ public class Player extends Actor
         {
             isWalking = false;
         }
+        
+        if(isTouching(Platform.class) && (!(isOnGround())))
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = 3;
+        }
     }
     
     private void jump() 
