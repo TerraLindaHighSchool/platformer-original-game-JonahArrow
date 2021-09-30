@@ -26,10 +26,9 @@ public abstract class Obstacle extends Actor
     protected void removeOutOfBounds(Obstacle obstacle)
     {
         if(obstacle.getY() > getWorld().getHeight() +
-                            obstacle.getImage().getHeight() / 2)
+                            obstacle.getImage().getWidth() / 2)
         {
             getWorld().removeObject(obstacle);
         }
     }
-    
 }

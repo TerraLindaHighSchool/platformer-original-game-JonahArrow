@@ -145,7 +145,40 @@ public class Player extends Actor
         }
         frame++;
     }
-    private void onCollision() {}
+    private void onCollision() 
+    {
+        if(isTouching(Exit.class))
+        {
+            World world = null;
+            try
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            }
+            catch (InstantiationException e)
+            {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e) {
+                System.out.println("cannot access class constructor");
+            }
+            Greenfoot.setWorld(world);
+        }
+        
+        if(isTouching(Bomb.class))
+        {
+            removeTouching(Bomb.class);
+        }
+        
+        if(isTouching(AcidRain.class))
+        {
+            removeTouching(AcidRain.class);
+        }
+        
+        if(isTouching(Platform.class))
+        {
+            yVelocity = -1;
+            fall();
+        }
+    }
     private void mirrorImages() 
     {
         for(int i = 0; i < WALK_ANIMATION.length; i++)

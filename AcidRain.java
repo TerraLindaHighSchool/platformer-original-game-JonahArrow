@@ -27,12 +27,9 @@ public class AcidRain extends Obstacle
     
     protected void fall()
     {
-        if(!isOnGround())
-        {
-            yVelocity += GRAVITY;
-            setLocation(getX(), getY() + (int) yVelocity);
-            removeOutOfBounds(this);
-        }
+        yVelocity += GRAVITY;
+        setLocation(getX(), getY() + (int) yVelocity);
+        removeOutOfBounds(this);
     }
     
 }
