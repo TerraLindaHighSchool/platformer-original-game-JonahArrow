@@ -99,15 +99,7 @@ public class Player extends Actor
         {
             isWalking = false;
         }
-        
-        if(isTouching(Platform.class) && (!(isOnGround())))
-        {
-            speed = 0;
-        }
-        else
-        {
-            speed = 3;
-        }
+
     }
     
     private void jump() 
@@ -182,10 +174,15 @@ public class Player extends Actor
             removeTouching(AcidRain.class);
         }
         
-        if(isTouching(Platform.class))
+        if((isTouching(Platform.class)) && (!isOnGround()))
         {
             yVelocity = -1;
             fall();
+            speed = 0;
+        }
+        else
+        {
+            speed = 3;
         }
     }
     private void mirrorImages() 
