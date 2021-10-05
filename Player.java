@@ -177,8 +177,18 @@ public class Player extends Actor
         if((isTouching(Platform.class)) && (!isOnGround()))
         {
             yVelocity = -1;
-            fall();
-            speed = 0;
+            if((isWalking) && (!Greenfoot.isKeyDown("left")))
+            {
+                speed = 0;
+            }
+            if((isWalking) && (!Greenfoot.isKeyDown("right")))
+            {
+                speed = 0;
+            }
+            else
+            {
+                speed = 3;
+            }
         }
         else
         {
