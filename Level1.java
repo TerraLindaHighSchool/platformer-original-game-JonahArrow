@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World
 {
     private final float GRAVITY = 0.0866f;
-    private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("JazzCut.mp3");
     /**
      * Constructor for objects of class BrickWorld.
      * 
@@ -87,7 +87,7 @@ public class Level1 extends World
     
     private void spawn()
     {
-        if(Math.random() < 0.025)
+        if(Math.random() < 0.005)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
         }
