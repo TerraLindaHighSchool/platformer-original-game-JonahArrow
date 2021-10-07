@@ -99,7 +99,6 @@ public class Player extends Actor
         {
             isWalking = false;
         }
-
     }
     
     private void jump() 
@@ -176,23 +175,8 @@ public class Player extends Actor
         
         if((isTouching(Platform.class)) && (!isOnGround()))
         {
-            yVelocity = -1;
-            if((isWalking) && (!Greenfoot.isKeyDown("left")))
-            {
-                speed = 0;
-            }
-            if((isWalking) && (!Greenfoot.isKeyDown("right")))
-            {
-                speed = 0;
-            }
-            else
-            {
-                speed = 3;
-            }
-        }
-        else
-        {
-            speed = 3;
+            yVelocity = -3;
+            fall();
         }
     }
     private void mirrorImages() 
