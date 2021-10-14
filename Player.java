@@ -32,7 +32,8 @@ public class Player extends Actor
         GRAVITY = gravity;
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
-        health = new Health[3];
+        healthCount = maxHealth;
+        health = new Health[maxHealth];
         STANDING_IMAGE = getImage();
         WALK_ANIMATION = new GreenfootImage[]
                         {
@@ -110,6 +111,23 @@ public class Player extends Actor
         {
             isWalking = false;
         }
+        
+        if(Greenfoot.isKeyDown("+"))
+        {
+            MUSIC.stop();
+            World world = null;
+            try
+            {
+                world = (World) NEXT_LEVEL.newInstance();
+            }
+            catch (InstantiationException e)
+            {
+                System.out.println("Class cannot be instantiated");
+            } catch (IllegalAccessException e) {
+                System.out.println("cannot access class constructor");
+            }
+            Greenfoot.setWorld(world);
+        }
     }
     
     private void jump() 
@@ -178,6 +196,7 @@ public class Player extends Actor
         if(isTouching(Bomb.class))
         {
             removeTouching(Bomb.class);
+            Greenfoot.playSound("explosionSmall.wav");
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
         }
@@ -189,9 +208,15 @@ public class Player extends Actor
             healthCount--;
         }
         
-        if(isTouching(Trapdoor.class))
+         if(isTouching(Trapdoor.class))
         {
             removeTouching(Trapdoor.class);
+        }
+        
+        if(isTouching(Gem.class))
+        {
+            removeTouching(Gem.class);
+            healthCount++;
         }
         
         if((isTouching(Platform.class)) && (!isOnGround()))
@@ -207,9 +232,9 @@ public class Player extends Actor
             WALK_ANIMATION[i].mirrorHorizontally();
         }
     }
-    private void gameOver() 
+        private void gameOver() 
     {
-        if(healthCount == -1)
+        if(healthCount == 0)
         {
             MUSIC.stop();
             Greenfoot.setWorld(new Level1());

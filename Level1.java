@@ -41,7 +41,7 @@ public class Level1 extends World
     {
         setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,Exit.class, HUD.class);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, 
-                           MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
+                MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
         Exit exit = new Exit();
         addObject(exit,1160,60);

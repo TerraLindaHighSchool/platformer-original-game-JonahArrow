@@ -74,8 +74,6 @@ public class Level2 extends World
         addObject(trapdoor2,150,360);
         SmBrickWall smBrickWall6 = new SmBrickWall();
         addObject(smBrickWall6,60,225);
-        Gem gem2 = new Gem();
-        addObject(gem2,30,170);
         SmBrickWall smBrickWall7 = new SmBrickWall();
         addObject(smBrickWall7,500,250);
         SmBrickWall smBrickWall8 = new SmBrickWall();
@@ -88,7 +86,7 @@ public class Level2 extends World
         addObject(brickWall2,860,120);
         SmBrickWall smBrickWall10 = new SmBrickWall();
         addObject(smBrickWall10,1160,120);
-        exit.setLocation(1160,60);
+        exit.setLocation(60,1160);
     }
     
     private void spawn()
