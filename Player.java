@@ -224,6 +224,16 @@ public class Player extends Actor
             yVelocity = -3;
             fall();
         }
+        
+        if((isTouching(Wall.class)) && (Greenfoot.isKeyDown("left")))
+        {
+            move(3);
+        }
+        
+        if((isTouching(Wall.class)) && (Greenfoot.isKeyDown("right")))
+        {
+            move(-3);
+        }
     }
     private void mirrorImages() 
     {

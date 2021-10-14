@@ -39,7 +39,7 @@ public class Level1 extends World
      */
     private void prepare()
     {
-        setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class,Exit.class, HUD.class);
+        setPaintOrder(Player.class, Platform.class, Obstacle.class, Collectable.class, Exit.class,Wall.class, HUD.class);
         Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, 
                 MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
@@ -89,6 +89,10 @@ public class Level1 extends World
         SmBrickWall smBrickWall10 = new SmBrickWall();
         addObject(smBrickWall10,1160,120);
         exit.setLocation(1160,60);
+        Wall wall = new Wall();
+        addObject(wall, -20, 600);
+        Wall wall2 = new Wall();
+        addObject(wall2, 1220, 600);
     }
     
     private void spawn()
