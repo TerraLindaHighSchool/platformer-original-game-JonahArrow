@@ -128,6 +128,11 @@ public class Player extends Actor
             }
             Greenfoot.setWorld(world);
         }
+        
+        if(Greenfoot.isKeyDown("space"))
+        {
+            
+        }
     }
     
     private void jump() 
@@ -233,6 +238,15 @@ public class Player extends Actor
         if((isTouching(Wall.class)) && (Greenfoot.isKeyDown("right")))
         {
             move(-3);
+        }
+        
+        if((isTouching(Rock.class)))
+        {
+            speed = 1;
+        }
+        else
+        {
+            speed = 3;
         }
     }
     private void mirrorImages() 

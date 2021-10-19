@@ -48,7 +48,7 @@ public class Level1 extends World
         exit.setLocation(1165,46);
         Floor floor = new Floor();
         addObject(floor,600,800);
-        Bomb bomb = new Bomb(GRAVITY);
+        Bomb bomb = new Bomb();
         addObject(bomb,150,770);
         SmBrickWall smBrickWall = new SmBrickWall();
         addObject(smBrickWall,400,700);
@@ -64,11 +64,11 @@ public class Level1 extends World
         addObject(smBrickWall5,1190,500);
         Gem gem = new Gem();
         addObject(gem,1150,425);
-        Bomb bomb2 = new Bomb(GRAVITY);
+        Bomb bomb2 = new Bomb();
         addObject(bomb2,1070,770);
         BrickWall brickWall = new BrickWall();
         addObject(brickWall,550,400);
-        Bomb bomb3 = new Bomb(GRAVITY);
+        Bomb bomb3 = new Bomb();
         addObject(bomb3,660,360);
         Trapdoor trapdoor2 = new Trapdoor(GRAVITY);
         addObject(trapdoor2,150,360);
@@ -82,7 +82,7 @@ public class Level1 extends World
         addObject(smBrickWall8,200,120);
         SmBrickWall smBrickWall9 = new SmBrickWall();
         addObject(smBrickWall9,320,120);
-        Bomb bomb4 = new Bomb(GRAVITY);
+        Bomb bomb4 = new Bomb();
         addObject(bomb4,250,80);
         BrickWall brickWall2 = new BrickWall();
         addObject(brickWall2,860,120);

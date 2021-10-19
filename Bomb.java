@@ -6,26 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bomb extends Obstacle
+public class Bomb extends Actor
 {
-    private float yVelocity;
-    private final float GRAVITY;
-    
-    public Bomb(float gravity)
-    {
-        GRAVITY = gravity;
-    }
-    
-    public void act()
-    {}
-    
-    protected void fall()
-    {
-        if(!isOnGround())
-        {
-            yVelocity += GRAVITY;
-            setLocation(getX(), getY() + (int) yVelocity);
-        }
-    }
-    
+
 }
