@@ -8,25 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spider extends Actor
 {
+    private int speed;
+    
     /**
      * Act - do whatever the Enemy1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        move(2);
+        move(speed);
         turnOnCollision();
     }
-    
+
     private void turnOnCollision()
     {
         if(isTouching(Rock.class))
         {
-            turn(180);
+            speed = 2;
+        }
+        else
+        {
+            speed = 2;
         }
         if(isTouching(Wall.class))
         {
-            turn(180);
+            speed = -2;
         }
     }
 }

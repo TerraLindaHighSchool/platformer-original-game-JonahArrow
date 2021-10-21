@@ -14,6 +14,7 @@ public class Player extends Actor
     private int speed;
     private int walkIndex;
     private int frame;
+    private int canShoot;
     private float yVelocity;
     private boolean isWalking;
     private boolean isJumping;
@@ -129,9 +130,24 @@ public class Player extends Actor
             Greenfoot.setWorld(world);
         }
         
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space") && (isFacingLeft))
         {
-            
+            if(canShoot == 45)
+            {
+                getWorld().addObject(new Bullet(10),getX(),getY());
+                canShoot = 0;
+            }
+            canShoot++;
+        }
+        
+        if(Greenfoot.isKeyDown("space") && (!isFacingLeft))
+        {
+            if(canShoot == 45)
+            {
+                getWorld().addObject(new Bullet(5),getX(),getY());
+                canShoot = 0;
+            }
+            canShoot++;
         }
     }
     
