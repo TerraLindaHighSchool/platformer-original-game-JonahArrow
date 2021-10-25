@@ -26,10 +26,6 @@ public class Spider extends Actor
         {
             speed = 2;
         }
-        else
-        {
-            speed = 2;
-        }
         if(isTouching(Wall.class))
         {
             speed = -2;

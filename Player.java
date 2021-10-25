@@ -132,7 +132,7 @@ public class Player extends Actor
         
         if(Greenfoot.isKeyDown("space") && (isFacingLeft))
         {
-            if(canShoot == 45)
+            if(canShoot == 100)
             {
                 getWorld().addObject(new Bullet(10),getX(),getY());
                 canShoot = 0;

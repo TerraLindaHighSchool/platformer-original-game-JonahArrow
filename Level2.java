@@ -58,22 +58,16 @@ public class Level2 extends World
         addObject(rock,850,785);
         Trapdoor trapdoor = new Trapdoor(GRAVITY);
         addObject(trapdoor,350,650);
-        BrickWall brickWall = new BrickWall();
-        addObject(brickWall,550,400);
-        Trapdoor trapdoor2 = new Trapdoor(GRAVITY);
-        addObject(trapdoor2,150,360);
         SmBrickWall smBrickWall6 = new SmBrickWall();
         addObject(smBrickWall6,950,475);
         Gem gem2 = new Gem();
-        addObject(gem2,30,170);
+        addObject(gem2,1160,770);
         SmBrickWall smBrickWall7 = new SmBrickWall();
         addObject(smBrickWall7,500,250);
         SmBrickWall smBrickWall8 = new SmBrickWall();
-        addObject(smBrickWall8,200,120);
+        addObject(smBrickWall8,680,330);
         SmBrickWall smBrickWall9 = new SmBrickWall();
-        addObject(smBrickWall9,320,120);
-        BrickWall brickWall2 = new BrickWall();
-        addObject(brickWall2,860,120);
+        addObject(smBrickWall9,380,250);
         SmBrickWall smBrickWall10 = new SmBrickWall();
         addObject(smBrickWall10,1160,120);
         exit.setLocation(1160,60);
@@ -82,9 +76,21 @@ public class Level2 extends World
         Wall wall2 = new Wall();
         addObject(wall2, 1220, 600);
         Spider spider = new Spider();
-        addObject(spider, 1000, 770);
+        addObject(spider, 1200, 770);
         Bomb bomb = new Bomb();
         addObject(bomb, 350, 770);
+        Gem gem = new Gem();
+        addObject(gem, 100, 100);
+        Trapdoor trapdoor2 = new Trapdoor(GRAVITY);
+        addObject(trapdoor2, 100, 200);
+        Spider spider2 = new Spider();
+        addObject(spider2, 1200, 570);
+        Rock rock2 = new Rock(GRAVITY);
+        addObject(rock2,500, 570);
+        Rock rock3 = new Rock(GRAVITY);
+        addObject(rock3, 350, 220);
+        Spider spider3 = new Spider();
+        addObject(spider3, 380, 220);
     }
     
     private void spawn()
