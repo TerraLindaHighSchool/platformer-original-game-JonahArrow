@@ -9,10 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
     private int speed;
-    
+    private boolean exists;
     public Bullet(int speed)
     {
         this.speed = speed;
+        exists = true;
     }
     /**int
      * Act - do whatever the Bullet wants to do. This method is called whenever
@@ -22,6 +23,8 @@ public class Bullet extends Actor
     {
         shootLeft();
         shootRight();
+        onCollision();
+        if(!exists) getWorld().removeObject(this);
     }
     
     private void shootLeft()
@@ -42,9 +45,16 @@ public class Bullet extends Actor
     
     private void onCollision()
     {
-        if(isAtEdge())
+        if(isTouching(Spider.class))
         {
-            getWorld().removeObject(this);
+            removeTouching(Spider.class);
+            exists = false;
+        }
+        
+        if(isTouching(Shield.class))
+        {
+            removeTouching(Shield.class);
+            exists = false;
         }
     }
 }

@@ -16,7 +16,7 @@ public class Level2 extends World
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
     private final int MAX_POWERUP = 2;
-    private final Class NEXT_LEVEL = Level2.class;
+    private final Class NEXT_LEVEL = Level3.class;
     /**
      * Constructor for objects of class BrickWorld.
      * 
@@ -91,6 +91,8 @@ public class Level2 extends World
         addObject(rock3, 350, 220);
         Spider spider3 = new Spider();
         addObject(spider3, 380, 220);
+        SmBrickWall smBrickWall11 = new SmBrickWall();
+        addObject(smBrickWall11,860,180);
     }
     
     private void spawn()
