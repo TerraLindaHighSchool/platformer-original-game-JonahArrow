@@ -40,5 +40,11 @@ public class WinSplash extends World
             Player player = new Player(SPEED, JUMP_FORCE, GRAVITY, 
                 MAX_HEALTH, MAX_POWERUP, NEXT_LEVEL, MUSIC);
         addObject(player,43,760);
+        Floor floor = new Floor();
+        addObject(floor,600,800);
+        Wall wall = new Wall();
+        addObject(wall, -20, 600);
+        Wall wall2 = new Wall();
+        addObject(wall2, 1220, 600);
     }
 }
