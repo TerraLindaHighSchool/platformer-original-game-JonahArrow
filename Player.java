@@ -149,6 +149,12 @@ public class Player extends Actor
             }
             canShoot++;
         }
+        
+        if(Greenfoot.isKeyDown("r"))
+        {
+            MUSIC.stop();
+            Greenfoot.setWorld(new Level1());
+        }
     }
     
     private void jump() 
@@ -225,6 +231,7 @@ public class Player extends Actor
         if(isTouching(AcidRain.class))
         {
             removeTouching(AcidRain.class);
+            Greenfoot.playSound("jump.wav");
             getWorld().removeObject(health[healthCount - 1]);
             healthCount--;
         }
@@ -232,12 +239,18 @@ public class Player extends Actor
          if(isTouching(Trapdoor.class))
         {
             removeTouching(Trapdoor.class);
+            Greenfoot.playSound("door_open.wav");
         }
         
         if(isTouching(Gem.class))
         {
             removeTouching(Gem.class);
-            healthCount++;
+            Greenfoot.playSound("collectable.wav");
+            if(healthCount < 2)
+            {
+                getWorld().addObject(health[healthCount + 1],30 + healthCount * 42,36);
+                healthCount++;
+            }
         }
         
         if((isTouching(Platform.class)) && (!isOnGround()))
@@ -264,6 +277,13 @@ public class Player extends Actor
         {
             speed = 3;
         }
+        
+        if(isTouching(Shield.class))
+        {
+            MUSIC.stop();
+            Greenfoot.setWorld(new Level1());
+        }
+    
     }
     private void mirrorImages() 
     {

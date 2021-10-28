@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level3 extends World
 {
     private final float GRAVITY = 0.0866f;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("bossmusic.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 3;
@@ -49,7 +49,7 @@ public class Level3 extends World
         addObject(wall, -20, 600);
         Wall wall2 = new Wall();
         addObject(wall2, 1220, 600);
-        FinalBoss finalBoss = new FinalBoss();
+        FinalBoss finalBoss = new FinalBoss(NEXT_LEVEL, MUSIC);
         addObject(finalBoss, 900, 700);
         Shield shield = new Shield();
         addObject(shield, 900, 700);
@@ -75,7 +75,7 @@ public class Level3 extends World
     
     private void spawn()
     {
-        if(Math.random() < 0.05)
+        if(Math.random() < 0.07)
         {
             addObject(new AcidRain(GRAVITY), Greenfoot.getRandomNumber(1200), -30);
         }

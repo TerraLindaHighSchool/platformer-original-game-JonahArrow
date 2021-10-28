@@ -48,12 +48,14 @@ public class Bullet extends Actor
         if(isTouching(Spider.class))
         {
             removeTouching(Spider.class);
+            Greenfoot.playSound("explosionSmall.wav");
             exists = false;
         }
         
         if(isTouching(Shield.class))
         {
             removeTouching(Shield.class);
+            Greenfoot.playSound("explosionSmall.wav");
             exists = false;
         }
     }
